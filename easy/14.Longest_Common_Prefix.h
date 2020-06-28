@@ -18,6 +18,7 @@ All given inputs are in lowercase letters a-z.
 
 */
 
+#include <algorithm>
 #include <vector>
 #include <string>
 
@@ -95,5 +96,38 @@ private:
             ++index;
         }
         return lhs.substr(0, index);
+    }
+};
+
+class Solution4 {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        if (strs.size() == 0) return "";
+
+        int minLength = std::min_element(strs.begin(), strs.end(),
+            [](const string& lhs, const string& rhs)
+            { return lhs.size() < rhs.size(); })->size();
+        int low = 0, high = minLength, mid;
+        while (low < high) {
+            mid = (high - low + 1) / 2 + low;
+            if (isCommonPrefix(strs, mid)) {
+                low = mid;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return strs[0].substr(0, low);
+    }
+
+private:
+    bool isCommonPrefix(const vector<string>& strs, int length) {
+        string str0 = strs[0].substr(0, length), str;
+        int count = strs.size();
+        for (int i = 1; i < count; ++i) {
+            if (str0 != strs[i].substr(0, length)) {
+                return false;
+            }
+        }
+        return true;
     }
 };
