@@ -1,31 +1,19 @@
-/*
-1. Two Sum
-
-Given an array of integers, return indices of the two numbers
-such that they add up to a specific target.
-
-You may assume that each input would have exactly one solution,
-and you may not use the same element twice.
-
-Example:
-
-Given nums = [2, 7, 11, 15], target = 9,
-
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
-*/
-
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using std::vector;
-using std::map;
+using std::unordered_map;
+
+class Solution {
+public:
+    virtual vector<int> twoSum(vector<int>&, int) = 0;
+};
 
 // twice hash
-class Solution1 {
+class Solution1 : public Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map<int, int> valueToIndex;
+        unordered_map<int, int> valueToIndex;
 
         for (int i = 0; i < nums.size(); ++i) {
             valueToIndex[nums[i]] = i;
@@ -41,10 +29,10 @@ public:
 };
 
 // once hash
-class Solution2 {
+class Solution2 : public Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        map<int, int> valueToIndex;
+        unordered_map<int, int> valueToIndex;
 
         for (int i = 0; i < nums.size(); ++i) {
             if (valueToIndex.find(target - nums[i]) != valueToIndex.end()) {
