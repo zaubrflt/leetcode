@@ -1,0 +1,3 @@
+project(26.Remove_Duplicates_from_Sorted_Array)
+
+add_executable(Remove_Duplicates_from_Sorted_Array main.cc)
