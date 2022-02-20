@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
         vector<int> nums1 = {1, 1, 2};
         test(&solution, nums1);
 
-        std::cout << "test1:" << std::endl;
+        std::cout << "test2:" << std::endl;
         vector<int> nums2 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         test(&solution, nums2);
     }

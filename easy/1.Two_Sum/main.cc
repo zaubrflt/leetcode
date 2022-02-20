@@ -26,11 +26,11 @@ int main(int argc, char const *argv[])
         vector<int> nums1 = {2, 7, 11, 15};
         test(&solution, nums1, 9);
 
-        std::cout << "test1:" << std::endl;
+        std::cout << "test2:" << std::endl;
         vector<int> nums2 = {3, 2, 4};
         test(&solution, nums2, 6);
 
-        std::cout << "test1:" << std::endl;
+        std::cout << "test3:" << std::endl;
         vector<int> nums3 = {3, 3};
         test(&solution, nums3, 6);
     }
@@ -42,11 +42,11 @@ int main(int argc, char const *argv[])
         vector<int> nums1 = {2, 7, 11, 15};
         test(&solution, nums1, 9);
 
-        std::cout << "test1:" << std::endl;
+        std::cout << "test2:" << std::endl;
         vector<int> nums2 = {3, 2, 4};
         test(&solution, nums2, 6);
 
-        std::cout << "test1:" << std::endl;
+        std::cout << "test3:" << std::endl;
         vector<int> nums3 = {3, 3};
         test(&solution, nums3, 6);
     }
