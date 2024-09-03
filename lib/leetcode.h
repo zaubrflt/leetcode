@@ -14,3 +14,13 @@ inline std::ostream& operator<<(std::ostream &out, const std::vector<int>& nums)
   out << nums[nums.size() - 1] << "]";
   return out;
 }
+
+template <typename T>
+inline bool operator==(const std::vector<T> lh, const std::vector<T> rh)
+{
+  if (lh.size() != rh.size()) return false;
+  for (int i = 0; i < lh.size(); i++) {
+    if (lh[i] != rh[i]) return false;
+  }
+  return true;
+}
