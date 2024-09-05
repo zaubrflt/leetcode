@@ -1,3 +1,6 @@
+#ifndef LEETCODE_H
+#define LEETCODE_H
+
 #include <iostream>
 #include <vector>
 
@@ -24,3 +27,5 @@ inline bool operator==(const std::vector<T> lh, const std::vector<T> rh)
   }
   return true;
 }
+
+#endif // LEETCODE_H
